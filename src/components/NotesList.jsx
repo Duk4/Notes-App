@@ -1,8 +1,13 @@
 import React from 'react';
+import Note from './Note';
 
 const NotesList = () => {
     return (
-        <div>Item 1</div>
+        <div className="list">
+            <Note />
+            <Note />
+            <Note />
+        </div>
     );
 }
 

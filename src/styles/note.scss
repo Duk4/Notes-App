@@ -1,0 +1,51 @@
+$blue: #1E90FF;
+$darkblue: rgb(18, 90, 163);
+$red: #FF362E;
+$darkred: rgb(235, 37, 30);
+$white: #ffffff;
+
+.note {
+    margin: 1rem 0;
+    background-color: antiquewhite;
+    padding: 1rem;
+}
+
+.title-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title {
+    font-size: 2rem;
+}
+
+.btns {
+    .edit {
+        font-size: 2rem;
+        background-color: $blue;
+        color: $white;
+        border: none;
+        margin-right: 1rem;
+        padding: 0 0.6rem 0.2rem 0.6rem;
+        &:hover {
+            background-color: $darkblue;
+            cursor: pointer;
+        }
+    }
+    .delete {
+        font-size: 2rem;
+        background-color: $red;
+        color: $white;
+        border: none;
+        padding: 0 0.2rem 0.2rem 0.2rem;
+        &:hover {
+            background-color: $darkred;
+            cursor: pointer;
+        }
+    }
+}
+
+p {
+    text-align: left;
+    font-size: 1.6rem;
+}

@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap');
 
 $blue: #1E90FF;
+$darkblue: rgb(18, 90, 163);
 $white: #ffffff;
 
 * {
@@ -30,9 +31,21 @@ header {
     }
 }
 
+.add-note {
+    background-color: $blue;
+    color: $white;
+    border: none;
+    font-size: 2rem;
+    padding: 1rem;
+    &:hover{
+        background-color: $darkblue;
+        cursor: pointer;
+    }
+}
+
 .sort {
-    width: 40%;
-    margin: 4rem auto;
+    width: 50%;
+    margin: 4rem auto 0 auto;
     display: flex;
     border-bottom: .2rem solid $blue;
     padding-bottom: 0.5rem;
@@ -49,4 +62,9 @@ header {
             font-size: 1.6rem;
         }
     }
+}
+
+.note-list {
+    width: 50%;
+    margin: 1rem auto 0 auto;
 }

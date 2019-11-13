@@ -3,21 +3,22 @@ import NotesList from './NotesList'
 
 const App = () => {
   return (
-    <div className="App">
+    <div className="app">
       <header>Notes App</header>
-      <section className="filter">
+      <div className="filter">
         <input type="text" placeholder="Search note titles..." />
-      </section>
-      <section className="sort">
+      </div>
+      <button className="add-note">New note</button>
+      <div className="sort">
         <span>Notes</span>
         <select>
           <option value="newest">newest</option>
           <option value="oldest">oldest</option>
         </select>
-      </section>
-      <section className="note-list">
+      </div>
+      <div className="note-list">
         <NotesList />
-      </section>
+      </div>
     </div>
   );
 }
