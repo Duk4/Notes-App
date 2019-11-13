@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap');
+
+$blue: #1E90FF;
+$white: #ffffff;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+    font-size: 10px;
+    text-align: center;
+}
+
+header {
+    background-color: $blue;
+    color: $white;
+    font-size: 4rem;
+    padding: 1rem;
+}
+
+.filter{
+    width: 30%;
+    margin: 4rem auto;
+    input {
+        width: 100%;
+        font-size: 2rem;
+        text-align: left;
+        padding: 0.5rem 1rem;
+    }
+}
+
+.sort {
+    width: 40%;
+    margin: 4rem auto;
+    display: flex;
+    border-bottom: .2rem solid $blue;
+    padding-bottom: 0.5rem;
+    justify-content: space-between;
+    align-items: center;
+    span{
+        color: $blue;
+        font-size: 1.6rem;
+        font-weight: bold;
+    }
+    select{
+        font-size: 1.6rem;
+        option {
+            font-size: 1.6rem;
+        }
+    }
+}
