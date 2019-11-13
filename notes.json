@@ -1,0 +1,32 @@
+[
+    {
+        "title": "Send cards",
+        "body": "Send cards to family and friends",
+        "author_name": "Eugene",
+        "date": "2019-11-09"
+    },
+    {
+        "title": "Buy milk",
+        "body": "Buy milk at the store",
+        "author_name": "Samuel",
+        "date": "2019-11-10"
+    },
+    {
+        "title": "Buy cookies",
+        "body": "Buy cookies at the store",
+        "author_name": "Adam",
+        "date": "2019-11-11"
+    },
+    {
+        "title": "Talk to Mike",
+        "body": "Call Mike to prepare for Christmas dinner",
+        "author_name": "Bob",
+        "date": "2019-11-12"
+    },
+    {
+        "title": "Buy gifts",
+        "body": "Buy toys for the kids",
+        "author_name": "John",
+        "date": "2019-11-13"
+    }
+]
