@@ -1,7 +1,9 @@
 import React from 'react';
-import NotesList from './NotesList'
+import NotesList from './NotesList';
+import notes from '../notes.json';
 
 const App = () => {
+  console.log(notes);
   return (
     <div className="app">
       <header>Notes App</header>
