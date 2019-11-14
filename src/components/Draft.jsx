@@ -11,10 +11,10 @@ const Draft = ({ noteChangingStatus, handleStatus }) => {
     });
 
     let secondOption;
-    if (noteChangingStatus.status === 'Drafted') {
+    if (noteChangingStatus.status === 'Draft') {
         secondOption = 'Published';
     } else {
-        secondOption = 'Drafted';
+        secondOption = 'Draft';
     }
 
     return (

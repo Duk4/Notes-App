@@ -3,7 +3,7 @@ import '../styles/note.scss';
 
 const Note = ({ note, handleDelete, handleEdit }) => {
     let id;
-    if (note.status === "Drafted") id = 'note';
+    if (note.status === "Draft") id = 'note';
 
     return (
         <div className="note" id={id}>

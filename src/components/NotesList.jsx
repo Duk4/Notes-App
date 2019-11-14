@@ -10,7 +10,7 @@ const NotesList = ({ notes, filter, handleDelete, handleEdit }) => {
     };
 
     const published = notes.filter((el) => { return el.status === "Published" });
-    const drafted = notes.filter((el) => { return el.status === "Drafted" });
+    const drafted = notes.filter((el) => { return el.status === "Draft" });
     console.log(notes);
     let noNotes;
     if (!notes.length) {

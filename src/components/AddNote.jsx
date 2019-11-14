@@ -7,7 +7,7 @@ const AddNote = ({ handleAddNote }) => {
         body: '',
         author_name: '',
         date: new Date(),
-        status: 'Drafted'
+        status: 'Draft'
     });
 
     return (
@@ -29,7 +29,7 @@ const AddNote = ({ handleAddNote }) => {
                 <div className="new-note-field">
                     <label htmlFor="author">Status:</label>
                     <select id="status" onChange={(e) => { setNote({ ...note, status: e.target.value }) }}>
-                        <option value="Drafted">Drafted</option>
+                        <option value="Draft">Draft</option>
                         <option value="Published">Published</option>
                     </select>
                 </div>
