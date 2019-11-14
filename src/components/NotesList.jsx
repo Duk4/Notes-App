@@ -1,7 +1,7 @@
 import React from 'react';
 import Note from './Note';
 
-const NotesList = ({ notes, filter, handleDelete, handleEdit }) => {
+const NotesList = ({ notes, filter, handleDelete, handleEdit, isChangingStatus, isAddingNote }) => {
     if (filter) {
         let regex = new RegExp("^" + filter, "i");
         notes = notes.filter((el) => {
@@ -21,12 +21,26 @@ const NotesList = ({ notes, filter, handleDelete, handleEdit }) => {
         <div className="list">
             {
                 published && published.map((note, i) => {
-                    return (<Note note={note} key={i} handleDelete={handleDelete} handleEdit={handleEdit} />);
+                    return (<Note
+                        note={note}
+                        key={i}
+                        handleDelete={handleDelete}
+                        handleEdit={handleEdit}
+                        isChangingStatus={isChangingStatus}
+                        isAddingNote={isAddingNote}
+                    />);
                 })
             }
             {
                 drafted && drafted.map((note, i) => {
-                    return (<Note note={note} key={i} handleDelete={handleDelete} handleEdit={handleEdit} />);
+                    return (<Note
+                        note={note}
+                        key={i}
+                        handleDelete={handleDelete}
+                        handleEdit={handleEdit}
+                        isChangingStatus={isChangingStatus}
+                        isAddingNote={isAddingNote}
+                    />);
                 })
             }
             {

@@ -73,7 +73,14 @@ const App = () => {
           </select>
         </div>
         <div className="note-list">
-          <NotesList notes={notes} filter={filterString} handleDelete={handleDelete} handleEdit={handleEdit} />
+          <NotesList
+            notes={notes}
+            filter={filterString}
+            handleDelete={handleDelete}
+            handleEdit={handleEdit}
+            isChangingStatus={isChangingStatus}
+            isAddingNote={isAddingNote}
+          />
         </div>
       </div>
       {form}
