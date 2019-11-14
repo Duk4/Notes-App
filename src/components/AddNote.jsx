@@ -10,6 +10,9 @@ const AddNote = ({ handleAddNote }) => {
         status: 'Draft'
     });
 
+    let method;
+    if (note.title && note.body && note.author_name) method = () => { handleAddNote(note) };
+
     return (
         <div className="add-note">
             <form>
@@ -33,7 +36,7 @@ const AddNote = ({ handleAddNote }) => {
                         <option value="Published">Published</option>
                     </select>
                 </div>
-                <button type="button" className="add-note-btn" onClick={() => { handleAddNote(note) }}>Add note</button>
+                <button type="button" className="add-note-btn" onClick={method}>Add note</button>
             </form>
         </div>
     );
