@@ -33,7 +33,7 @@ const AddNote = ({ handleAddNote }) => {
                         <option value="Published">Published</option>
                     </select>
                 </div>
-                <button type="button" className="add-note-btn" onClick={() => { handleAddNote(note); console.log(note) }}>Add note</button>
+                <button type="button" className="add-note-btn" onClick={() => { handleAddNote(note) }}>Add note</button>
             </form>
         </div>
     );

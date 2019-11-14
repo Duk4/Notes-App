@@ -58,6 +58,9 @@ header {
     }
     select{
         font-size: 1.6rem;
+        &:hover{
+            cursor: pointer;
+        }
         option {
             font-size: 1.6rem;
         }
@@ -71,4 +74,11 @@ header {
 
 .blur-on {
     filter: blur(0.5rem);
+}
+
+.no-notes {
+    color: $blue;
+    margin-top: 10rem;
+    font-size: 3rem;
+    font-weight: bold;
 }

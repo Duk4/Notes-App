@@ -14,6 +14,12 @@ const App = () => {
     setNotes([...notes, notes[notes.length] = note]);
   };
 
+  const handleDelete = (note) => {
+    setNotes(notes.filter((el) => {
+      return el !== note;
+    }));
+  };
+
   if (sort === 'newest') {
     notes.sort((a, b) => {
       return new Date(b.date) - new Date(a.date);
@@ -46,7 +52,7 @@ const App = () => {
           </select>
         </div>
         <div className="note-list">
-          <NotesList notes={notes} filter={filterString} />
+          <NotesList notes={notes} filter={filterString} handleDelete={handleDelete} />
         </div>
       </div>
       {
