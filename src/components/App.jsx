@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import NotesList from './NotesList';
 import AddNote from './AddNote';
+import Draft from './Draft';
 import jsonNotes from '../notes.json';
 
 const App = () => {
   const [notes, setNotes] = useState(jsonNotes);
   const [filterString, setString] = useState('');
   const [isAddingNote, setAddingState] = useState(false);
+  const [isChangingStatus, setChangingStatus] = useState(false);
+  const [noteChangingStatus, setNoteChangingStatus] = useState({});
   const [sort, setSort] = useState('newest');
 
   const handleAddNote = (note) => {
@@ -16,23 +19,41 @@ const App = () => {
 
   const handleDelete = (note) => {
     setNotes(notes.filter((el) => {
-      return el !== note;
+      return el !== note
     }));
   };
 
-  if (sort === 'newest') {
-    notes.sort((a, b) => {
+  const handleEdit = (note) => {
+    setChangingStatus(true);
+    setNoteChangingStatus(note);
+  };
+
+  const handleStatus = (noteChangingStatus, note) => {
+    let index = notes.indexOf(noteChangingStatus);
+    let newNotes = notes;
+    newNotes[index].status = note.status;
+    setNotes(newNotes);
+    setChangingStatus(false);
+  }
+
+  const sortByDate = (arr) => {
+    return arr.sort((a, b) => {
       return new Date(b.date) - new Date(a.date);
     });
+  }
+
+  if (sort === 'newest') {
+    sortByDate(notes);
   } else {
-    notes.sort((a, b) => {
-      return new Date(b.date) - new Date(a.date);
-    }).reverse();
+    sortByDate(notes).reverse();
   }
 
   let form, className;
   if (isAddingNote) {
     form = <AddNote handleAddNote={handleAddNote} />;
+    className = "blur-on";
+  } else if (isChangingStatus) {
+    form = <Draft noteChangingStatus={noteChangingStatus} handleStatus={handleStatus} />;
     className = "blur-on";
   }
 
@@ -52,12 +73,10 @@ const App = () => {
           </select>
         </div>
         <div className="note-list">
-          <NotesList notes={notes} filter={filterString} handleDelete={handleDelete} />
+          <NotesList notes={notes} filter={filterString} handleDelete={handleDelete} handleEdit={handleEdit} />
         </div>
       </div>
-      {
-        form
-      }
+      {form}
     </div>
   );
 }

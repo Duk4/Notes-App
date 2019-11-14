@@ -1,0 +1,21 @@
+$blue: #1E90FF;
+$white: #ffffff;
+$green: #45CE30;
+
+.draft {
+    position: absolute;
+    left: 35%;
+    top: 35%;
+    width: 30%;
+    height: 30%;
+    z-index: 90;
+    form {
+        height: 100%;
+        padding: 2.5rem;
+        background-color: $blue;
+        color: $white;
+    }
+    h3 {
+        font-size: 4rem;
+    }
+}

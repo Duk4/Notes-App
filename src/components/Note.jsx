@@ -1,13 +1,16 @@
 import React from 'react';
 import '../styles/note.scss';
 
-const Note = ({ note, handleDelete }) => {
+const Note = ({ note, handleDelete, handleEdit }) => {
+    let id;
+    if (note.status === "Drafted") id = 'note';
+
     return (
-        <div className="note">
+        <div className="note" id={id}>
             <div className="title-row">
                 <h3 className="title">{note.title}</h3>
                 <div className="btns">
-                    <button className="edit">&equiv;</button>
+                    <button className="edit" onClick={() => { handleEdit(note) }}>&equiv;</button>
                     <button className="delete" onClick={() => { handleDelete(note) }}>&otimes;</button>
                 </div>
             </div>
