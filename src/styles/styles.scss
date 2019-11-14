@@ -31,7 +31,7 @@ header {
     }
 }
 
-.add-note {
+.new-note {
     background-color: $blue;
     color: $white;
     border: none;
@@ -67,4 +67,8 @@ header {
 .note-list {
     width: 50%;
     margin: 1rem auto 0 auto;
+}
+
+.blur-on {
+    filter: blur(0.5rem);
 }

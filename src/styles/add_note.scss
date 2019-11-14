@@ -1,0 +1,71 @@
+$blue: #1E90FF;
+$white: #ffffff;
+$green: #45CE30;
+
+.add-note {
+    position: absolute;
+    left: 30%;
+    top: 15%;
+    width: 40%;
+    height: 70%;
+    z-index: 90;
+    form {
+        height: 100%;
+        z-index: 100;
+        padding: 2.5rem;
+        background-color: $blue;
+        color: $white;
+    }
+    h3 {
+        font-size: 4rem;
+    }
+}
+
+.new-note-field {
+    margin: 0.5rem 0;
+    width: 100%;
+    text-align: left;
+    label {
+        font-size: 2.4rem;
+        font-weight: bold;
+    }
+    input {
+        font-size: 2rem;
+        width: 100%;
+        text-align: left;
+        padding: 0.5rem;
+    }
+    textarea {
+        font-size: 2rem;
+        width: 100%;
+        height: 15rem;
+        text-align: left;
+        padding: 0.5rem;
+    }
+    select {
+        font-size: 2rem;
+        width: 100%;
+        &:hover {
+            cursor: pointer;
+        }
+        option {
+            font-size: 2rem;
+        }
+    }
+}
+
+.add-note-btn {
+    border: none;
+    width: 15rem;
+    margin: 2rem auto 0 auto;
+    padding: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: $green;
+    color: $white;
+    &:hover {
+        background-color: $white;
+        color: $blue;
+        cursor: pointer;
+    }
+}

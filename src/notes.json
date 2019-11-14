@@ -3,30 +3,35 @@
         "title": "Send cards",
         "body": "Send cards to family and friends",
         "author_name": "Eugene",
-        "date": "2019-11-09"
+        "date": "2019-11-09",
+        "status": "Published"
     },
     {
         "title": "Buy milk",
         "body": "Buy milk at the store",
         "author_name": "Samuel",
-        "date": "2019-11-10"
+        "date": "2019-11-10",
+        "status": "Published"
     },
     {
         "title": "Buy cookies",
         "body": "Buy cookies at the store",
         "author_name": "Adam",
-        "date": "2019-11-11"
+        "date": "2019-11-11",
+        "status": "Published"
     },
     {
         "title": "Talk to Mike",
         "body": "Call Mike to prepare for Christmas dinner",
         "author_name": "Bob",
-        "date": "2019-11-12"
+        "date": "2019-11-12",
+        "status": "Published"
     },
     {
         "title": "Buy gifts",
         "body": "Buy toys for the kids",
         "author_name": "John",
-        "date": "2019-11-13"
+        "date": "2019-11-13",
+        "status": "Published"
     }
 ]
