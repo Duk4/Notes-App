@@ -48,13 +48,15 @@ const App = () => {
     sortByDate(notes).reverse();
   }
 
-  let form, className;
+  let form, className, func;
   if (isAddingNote) {
     form = <AddNote handleAddNote={handleAddNote} />;
     className = "blur-on";
   } else if (isChangingStatus) {
     form = <Draft noteChangingStatus={noteChangingStatus} handleStatus={handleStatus} />;
     className = "blur-on";
+  } else {
+    func = () => { setAddingState(true) };
   }
 
   return (
@@ -64,7 +66,7 @@ const App = () => {
         <div className="filter">
           <input type="text" placeholder="Search note titles..." onChange={(e) => { setString(e.target.value) }} />
         </div>
-        <button className="new-note" onClick={() => { setAddingState(true) }}>New note</button>
+        <button className="new-note" onClick={func}>New note</button>
         <div className="sort">
           <span>Notes</span>
           <select onChange={(e) => { setSort(e.target.value) }}>
