@@ -1,0 +1,53 @@
+@media  (max-width: 900px) {
+    .filter {
+        width: 50%;
+    }
+
+    .add-note {
+        h3 {
+            margin-top: 1rem;
+            font-size: 3rem;
+        }
+    }
+
+    .new-note-field {
+        label {
+            font-size: 2rem;
+        }
+        input {
+            font-size: 2rem;
+        }
+        textarea {
+            font-size: 2rem;
+        }
+        select {
+            font-size: 2rem;
+            option {
+                font-size: 2rem;
+            }
+        }
+    }
+
+    .draft {
+        left: 30%;
+        width: 40%;
+        form {
+            padding: 2rem;
+            select {
+                font-size: 2rem;
+                option {
+                    font-size: 2rem;
+                }
+            }
+        }
+        h3 {
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+            font-size: 3rem;
+        }
+    }
+
+    .no-notes {
+        font-size: 2rem;
+    }
+}
