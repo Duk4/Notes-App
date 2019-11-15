@@ -1,0 +1,27 @@
+@media  (max-width: 600px) {
+    .filter {
+        width: 80%;
+    }
+
+    .add-note {
+        left: 0;
+        width: 100%;
+    }
+
+    .sort {
+        width: 90%;
+    }
+
+    .note-list {
+        width: 90%;
+    }
+
+    .draft {
+        left: 15%;
+        width: 70%;
+    }
+
+    .add-note-btn {
+        width: 50%;
+    }
+}
