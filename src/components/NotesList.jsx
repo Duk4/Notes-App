@@ -9,9 +9,17 @@ const NotesList = ({ notes, filter, handleDelete, handleEdit, isChangingStatus, 
         });
     };
 
-    const published = notes.filter((el) => { return el.status === "Published" });
-    const drafted = notes.filter((el) => { return el.status === "Draft" });
-    console.log(notes);
+    const filterStatus = (string) => {
+        return notes.filter((el) => { return el.status === string });
+    }
+
+    const published = filterStatus("Published");
+    const draft = filterStatus("Draft");
+    let sorted = published;
+    for (let i = 0; i < draft.length; i++) {
+        sorted.push(draft[i]);
+    }
+
     let noNotes;
     if (!notes.length) {
         noNotes = <div className="no-notes">No notes...</div>;
@@ -20,19 +28,7 @@ const NotesList = ({ notes, filter, handleDelete, handleEdit, isChangingStatus, 
     return (
         <div className="list">
             {
-                published && published.map((note, i) => {
-                    return (<Note
-                        note={note}
-                        key={i}
-                        handleDelete={handleDelete}
-                        handleEdit={handleEdit}
-                        isChangingStatus={isChangingStatus}
-                        isAddingNote={isAddingNote}
-                    />);
-                })
-            }
-            {
-                drafted && drafted.map((note, i) => {
+                sorted.map((note, i) => {
                     return (<Note
                         note={note}
                         key={i}
