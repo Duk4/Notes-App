@@ -20,27 +20,21 @@ const NotesList = ({ notes, filter, handleDelete, handleEdit, isChangingStatus, 
         sorted.push(draft[i]);
     }
 
-    let noNotes;
-    if (!notes.length) {
-        noNotes = <div className="no-notes">No notes...</div>;
-    };
-
     return (
         <div className="list">
             {
-                sorted.map((note, i) => {
-                    return (<Note
-                        note={note}
-                        key={i}
-                        handleDelete={handleDelete}
-                        handleEdit={handleEdit}
-                        isChangingStatus={isChangingStatus}
-                        isAddingNote={isAddingNote}
-                    />);
-                })
-            }
-            {
-                noNotes
+                sorted.length === 0
+                    ? <div className="no-notes">No notes...</div>
+                    : sorted.map((note, i) =>
+                        <Note
+                            note={note}
+                            key={i}
+                            handleDelete={handleDelete}
+                            handleEdit={handleEdit}
+                            isChangingStatus={isChangingStatus}
+                            isAddingNote={isAddingNote}
+                        />
+                    )
             }
         </div>
     );
