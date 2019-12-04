@@ -2,7 +2,12 @@ import React from 'react';
 import Note from './Note';
 
 const NotesList = ({ notes, filter, handleDelete, handleEdit, isChangingStatus, isAddingNote }) => {
+    function escapeRegExp(string) {
+        return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+
     if (filter) {
+        filter = escapeRegExp(filter);
         let regex = new RegExp("^" + filter, "i");
         notes = notes.filter((el) => {
             return el.title.match(regex);
