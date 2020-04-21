@@ -4,23 +4,40 @@ import AddNote from './AddNote';
 import Draft from './Draft';
 import jsonNotes from '../notes.json';
 
+let data;
+if (localStorage.getItem('storeddata') === null) {
+  data = jsonNotes;
+} else {
+  data = JSON.parse(localStorage.getItem('storeddata'));
+};
+console.log(data);
+const saveDataToLocal = (data) => {
+  let storedData = JSON.stringify(data);
+  localStorage.setItem('storeddata', storedData);
+};
+
 const App = () => {
-  const [notes, setNotes] = useState(jsonNotes);
+  const [notes, setNotes] = useState(data);
   const [filterString, setString] = useState('');
   const [isAddingNote, setAddingState] = useState(false);
   const [isChangingStatus, setChangingStatus] = useState(false);
   const [noteChangingStatus, setNoteChangingStatus] = useState({});
   const [sort, setSort] = useState('newest');
-
+  console.log(notes);
   const handleAddNote = (note) => {
     setAddingState(false);
     setNotes([...notes, notes[notes.length] = note]);
+    saveDataToLocal(notes);
   };
 
   const handleDelete = (note) => {
-    setNotes(notes.filter((el) => {
-      return el !== note
-    }));
+    let newNotes = notes.filter((el) => {
+      return el !== note;
+    });
+    setNotes([...newNotes]);
+    console.log(newNotes);
+    saveDataToLocal(newNotes);
+    console.log(newNotes);
   };
 
   const handleEdit = (note) => {
@@ -34,6 +51,7 @@ const App = () => {
     newNotes[index].status = note.status;
     setNotes(newNotes);
     setChangingStatus(false);
+    saveDataToLocal(notes);
   }
 
   const sortByDate = (arr) => {
