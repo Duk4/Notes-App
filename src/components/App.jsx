@@ -50,10 +50,10 @@ const App = () => {
 
   let form, className, func;
   if (isAddingNote) {
-    form = <AddNote handleAddNote={handleAddNote} />;
+    form = <AddNote handleAddNote={handleAddNote} setAddingState={setAddingState} />;
     className = "blur-on";
   } else if (isChangingStatus) {
-    form = <Draft noteChangingStatus={noteChangingStatus} handleStatus={handleStatus} />;
+    form = <Draft noteChangingStatus={noteChangingStatus} handleStatus={handleStatus} setChangingStatus={setChangingStatus} />;
     className = "blur-on";
   } else {
     func = () => { setAddingState(true) };

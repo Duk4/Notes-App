@@ -1,0 +1,16 @@
+.close-button {
+    color: #ffffff;
+    position: absolute;
+    border: none;
+    background-color: transparent;
+    top: 0rem;
+    right: 3rem;
+    font-size: 5rem;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    &:hover{
+        transform: scale(1.1);
+        transition: transform .3s ease-in-out;
+    }
+}

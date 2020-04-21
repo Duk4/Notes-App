@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import CloseButton from './CloseButton';
 import '../styles/draft.scss';
 
-const Draft = ({ noteChangingStatus, handleStatus }) => {
+const Draft = ({ noteChangingStatus, handleStatus, setChangingStatus }) => {
     const [note, setNote] = useState({
         title: noteChangingStatus.title,
         body: noteChangingStatus.body,
@@ -30,6 +31,7 @@ const Draft = ({ noteChangingStatus, handleStatus }) => {
                 </div>
                 <button type="button" className="add-note-btn" onClick={() => { handleStatus(noteChangingStatus, note) }}>Save</button>
             </form>
+            <CloseButton func={setChangingStatus} />
         </div>
     );
 }

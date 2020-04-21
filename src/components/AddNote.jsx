@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import CloseButton from './CloseButton';
 import '../styles/add_note.scss';
 
-const AddNote = ({ handleAddNote }) => {
+const AddNote = ({ handleAddNote, setAddingState }) => {
     const [note, setNote] = useState({
         title: '',
         body: '',
@@ -38,6 +39,7 @@ const AddNote = ({ handleAddNote }) => {
                 </div>
                 <button type="button" className="add-note-btn" onClick={method}>Add note</button>
             </form>
+            <CloseButton func={setAddingState} />
         </div>
     );
 }
